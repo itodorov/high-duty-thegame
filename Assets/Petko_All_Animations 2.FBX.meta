@@ -1,0 +1,254 @@
+fileFormatVersion: 2
+guid: e932fcb87d9978b429c15b7f69c88562
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: BN_Main
+    100002: BN_Petko_Head
+    100004: BN_Petko_Left_Arm
+    100006: BN_Petko_Left_Leg
+    100008: BN_Petko_Left_Leg_BIG
+    100010: BN_Petko_Right_Arm
+    100012: BN_Petko_Right_Leg
+    100014: BN_Petko_Right_Leg_BIG
+    100016: BN_Petko_Torso
+    100018: BN_Sheep_Back_Left_Leg
+    100020: BN_Sheep_Back_Left_Leg_BIG
+    100022: BN_Sheep_Back_Left_Leg_BIG002
+    100024: BN_Sheep_Back_Right_Leg
+    100026: BN_Sheep_Back_Right_Leg_BIG
+    100028: BN_Sheep_Front_Left_Leg
+    100030: BN_Sheep_Front_Left_Leg_BIG
+    100032: BN_Sheep_Front_Right_Leg
+    100034: BN_Sheep_Front_Right_Leg_BIG
+    100036: BN_Sheep_Torso
+    100038: Bone015
+    100040: Bone017
+    100042: Petko
+    100044: //RootNode
+    400000: BN_Main
+    400002: BN_Petko_Head
+    400004: BN_Petko_Left_Arm
+    400006: BN_Petko_Left_Leg
+    400008: BN_Petko_Left_Leg_BIG
+    400010: BN_Petko_Right_Arm
+    400012: BN_Petko_Right_Leg
+    400014: BN_Petko_Right_Leg_BIG
+    400016: BN_Petko_Torso
+    400018: BN_Sheep_Back_Left_Leg
+    400020: BN_Sheep_Back_Left_Leg_BIG
+    400022: BN_Sheep_Back_Left_Leg_BIG002
+    400024: BN_Sheep_Back_Right_Leg
+    400026: BN_Sheep_Back_Right_Leg_BIG
+    400028: BN_Sheep_Front_Left_Leg
+    400030: BN_Sheep_Front_Left_Leg_BIG
+    400032: BN_Sheep_Front_Right_Leg
+    400034: BN_Sheep_Front_Right_Leg_BIG
+    400036: BN_Sheep_Torso
+    400038: Bone015
+    400040: Bone017
+    400042: Petko
+    400044: //RootNode
+    4300000: Petko
+    7400000: PetkoRiding
+    7400002: PetkoDodge
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Petko
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: PetkoRiding
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BN_Main
+        weight: 1
+      - path: BN_Main/BN_Sheep_Back_Left_Leg_BIG
+        weight: 1
+      - path: BN_Main/BN_Sheep_Back_Left_Leg_BIG/BN_Sheep_Back_Left_Leg
+        weight: 1
+      - path: BN_Main/BN_Sheep_Back_Left_Leg_BIG002
+        weight: 1
+      - path: BN_Main/BN_Sheep_Back_Right_Leg_BIG
+        weight: 1
+      - path: BN_Main/BN_Sheep_Back_Right_Leg_BIG/BN_Sheep_Back_Right_Leg
+        weight: 1
+      - path: BN_Main/BN_Sheep_Front_Left_Leg_BIG
+        weight: 1
+      - path: BN_Main/BN_Sheep_Front_Left_Leg_BIG/BN_Sheep_Front_Left_Leg
+        weight: 1
+      - path: BN_Main/BN_Sheep_Front_Right_Leg_BIG
+        weight: 1
+      - path: BN_Main/BN_Sheep_Front_Right_Leg_BIG/BN_Sheep_Front_Right_Leg
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/BN_Petko_Left_Leg_BIG
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/BN_Petko_Left_Leg_BIG/BN_Petko_Left_Leg
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/BN_Petko_Right_Leg_BIG
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/BN_Petko_Right_Leg_BIG/BN_Petko_Right_Leg
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/BN_Petko_Torso
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/BN_Petko_Torso/BN_Petko_Head
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/Bone015
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/Bone015/BN_Petko_Left_Arm
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/Bone017
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/Bone017/BN_Petko_Right_Arm
+        weight: 1
+      - path: Petko
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: PetkoDodge
+      takeName: Take 001
+      firstFrame: 25
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BN_Main
+        weight: 1
+      - path: BN_Main/BN_Sheep_Back_Left_Leg_BIG
+        weight: 1
+      - path: BN_Main/BN_Sheep_Back_Left_Leg_BIG/BN_Sheep_Back_Left_Leg
+        weight: 1
+      - path: BN_Main/BN_Sheep_Back_Left_Leg_BIG002
+        weight: 1
+      - path: BN_Main/BN_Sheep_Back_Right_Leg_BIG
+        weight: 1
+      - path: BN_Main/BN_Sheep_Back_Right_Leg_BIG/BN_Sheep_Back_Right_Leg
+        weight: 1
+      - path: BN_Main/BN_Sheep_Front_Left_Leg_BIG
+        weight: 1
+      - path: BN_Main/BN_Sheep_Front_Left_Leg_BIG/BN_Sheep_Front_Left_Leg
+        weight: 1
+      - path: BN_Main/BN_Sheep_Front_Right_Leg_BIG
+        weight: 1
+      - path: BN_Main/BN_Sheep_Front_Right_Leg_BIG/BN_Sheep_Front_Right_Leg
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/BN_Petko_Left_Leg_BIG
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/BN_Petko_Left_Leg_BIG/BN_Petko_Left_Leg
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/BN_Petko_Right_Leg_BIG
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/BN_Petko_Right_Leg_BIG/BN_Petko_Right_Leg
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/BN_Petko_Torso
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/BN_Petko_Torso/BN_Petko_Head
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/Bone015
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/Bone015/BN_Petko_Left_Arm
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/Bone017
+        weight: 1
+      - path: BN_Main/BN_Sheep_Torso/Bone017/BN_Petko_Right_Arm
+        weight: 1
+      - path: Petko
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
