@@ -1,7 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CubeBehavior.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Materials\TransparentShader.shader">
     <Files>
+      <File FileName="Assets\Materials\TransparentShader.shader" Line="1" Column="1" />
       <File FileName="Assets\Networking.cs" Line="1" Column="1" />
       <File FileName="Assets\CubeBehavior.cs" Line="1" Column="1" />
     </Files>

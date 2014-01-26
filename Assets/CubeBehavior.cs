@@ -34,6 +34,12 @@ public class CubeBehavior : MonoBehaviour
 
     void Update()
     {
+        if (stopped)
+        {
+            animation.Stop();
+            return;
+        }
+
         if (Input.GetKey(KeyCode.LeftControl) && !hasCrouched)
         {
             crouchReceived = true;
@@ -89,16 +95,16 @@ public class CubeBehavior : MonoBehaviour
         // Move the controller
         controller.Move(moveDirection * Time.deltaTime);
 
-        if ((DateTime.Now - boosted).TotalMilliseconds < boostDuration)
+        float maxSpeedIncrease = (DateTime.Now - boosted).TotalMilliseconds < boostDuration ? maxSpeed : 0;
+        float playerDistanceTime = (opponent.transform.position.z - this.transform.position.z) / maxSpeed;
+        //Debug.Log(playerNumber + " " + opponent.transform.position.z + " " + this.transform.position.z + " " + playerDistanceTime);
+        if(playerDistanceTime > 0)
         {
-            currentSpeed = Math.Min(maxSpeed * 2, currentSpeed + Time.deltaTime * acceleration);
+            maxSpeedIncrease += Math.Min(12, playerDistanceTime * 4);
         }
-        else
-        {
-            currentSpeed = Math.Min(maxSpeed, currentSpeed + Time.deltaTime * acceleration);
-        }
-
-
+        //Debug.Log(maxSpeedIncrease);
+        currentSpeed = Math.Min(maxSpeed + maxSpeedIncrease, currentSpeed + Time.deltaTime * acceleration);
+        
         if(baaaing)
         { 
             var sphere = this.transform.FindChild("Sphere");
@@ -119,7 +125,6 @@ public class CubeBehavior : MonoBehaviour
 
             SphereCollider collider = sphere.collider as SphereCollider;
             float playerDistance = (opponent.transform.position - this.transform.position).magnitude;
-            Debug.Log(playerDistance + " " + collider.radius * scale.x * this.transform.localScale.x);
             if (collider.radius * scale.x * this.transform.localScale.x >= playerDistance && this.DecreaseScore())
             {
                 opponent.Boost();
@@ -144,6 +149,10 @@ public class CubeBehavior : MonoBehaviour
             currentSpeed = 5;
         }
 
+        if (hit.gameObject.tag == "FinishLine")
+        {
+            this.stopped = true;
+        }
 
     }
 
@@ -153,6 +162,12 @@ public class CubeBehavior : MonoBehaviour
         {
             return;
         }
+
+        if (hit.gameObject.tag == "FinishLine")
+        {
+            this.stopped = true;
+        }
+
         if (hit.gameObject.tag == "Bush")
         {
             currentSpeed = Math.Min(7, currentSpeed - 7);
@@ -171,7 +186,6 @@ public class CubeBehavior : MonoBehaviour
             {
                 if (collider.gameObject.tag == "Apple" || collider.gameObject.tag == "Pear")
                 {
-                    Debug.Log(collider.gameObject.tag);
                     Destroy(collider.gameObject);
                 }
             }
@@ -258,5 +272,7 @@ public class CubeBehavior : MonoBehaviour
         }
     }
 
-    
+
+
+    private bool stopped;
 }
