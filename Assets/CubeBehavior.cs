@@ -135,6 +135,7 @@ public class CubeBehavior : MonoBehaviour
 
         if ((baaaReceived || Input.GetKey(KeyCode.B)) && !baaaing && (DateTime.Now - baaaTime).TotalMilliseconds > 5000)
         {
+            baaaReceived = false;
             baaaing = true;
             baaaTime = DateTime.Now;
         }
@@ -266,8 +267,12 @@ public class CubeBehavior : MonoBehaviour
             case "straight":
                 leftReceived = rightReceived = false;
                 break;
-            case "baaaaaa":
-                baaaReceived = true;
+            case "baaaaa":
+                //Debug.Log("baa received");
+                if (!baaaing && (DateTime.Now - baaaTime).TotalMilliseconds > 5000)
+                {
+                    baaaReceived = true;
+                }
                 break;
         }
     }
