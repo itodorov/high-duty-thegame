@@ -13,6 +13,7 @@ public class CubeBehavior : MonoBehaviour
     public CubeBehavior opponent;
     private DateTime boosted;
     private const int boostDuration = 1700;
+    int turnSpeed;
 
     void Boost()
     {
@@ -214,6 +215,7 @@ public class CubeBehavior : MonoBehaviour
 
     float GetX()
     {
+        float factor = turnSpeed / 4f;
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             return Input.GetKey(KeyCode.LeftArrow) ? -1 : Input.GetKey(KeyCode.RightArrow) ? 1 : 0;
@@ -221,12 +223,12 @@ public class CubeBehavior : MonoBehaviour
 
         if (rightReceived)
         {
-            return 1;
+            return factor;
         }
 
         if (leftReceived)
         {
-            return -1;
+            return -factor;
         }
 
         return 0;
@@ -242,7 +244,7 @@ public class CubeBehavior : MonoBehaviour
     bool leftReceived;
     bool rightReceived;
     bool baaaReceived;
-    public void SendCommand(string command)
+    public void SendCommand(string command, params object[] args)
     {
         //Debug.Log("Player " + playerNumber + " received " + command);
         switch (command)
@@ -250,10 +252,20 @@ public class CubeBehavior : MonoBehaviour
             case "left":
                 leftReceived = true;
                 rightReceived = false;
+                if (args != null && args.Length > 0)
+                {
+                    turnSpeed = (int)args[0];
+                    Debug.Log(turnSpeed);
+                }
                 break;
             case "right":
                 rightReceived = true;
                 leftReceived = false;
+                if (args != null && args.Length > 0)
+                {
+                    turnSpeed = (int)args[0];
+                    Debug.Log(turnSpeed);
+                }
                 break;
             case "jump":
                 jumpReceived = true;

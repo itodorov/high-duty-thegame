@@ -9,7 +9,7 @@ public class MoveCamera : MonoBehaviour {
 	int curPos = 0;
 	int curFrame = 0;
 	double activeStartPos;
-
+	bool started = false;
 	// Use this for initialization
 	void Start () {
 		transform.position = new Vector3 (-0.003729045f, 2.338328f, -3.07846f);
@@ -18,6 +18,11 @@ public class MoveCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!started) {
+			if(Input.GetKey(KeyCode.Space))
+				started = true;
+			return;
+				}
 		//Debug.Log("curPos: " + curPos);
 		//Debug.Log("curFrame: " + curFrame);
 		if (curPos >= delta.Length) {

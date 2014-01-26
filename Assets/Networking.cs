@@ -80,14 +80,28 @@ public class Networking : MonoBehaviour {
 
     private void HandleMessage(string message)
     {
-        Debug.Log("Received message : " + message);
+     //   Debug.Log("Received message : " + message);
+
         string command = message.Substring(0, message.Length - 2);
         string playerNumber = message.Substring(message.Length - 1);
+        object[] args = null;
+        if (message.StartsWith("left") || message.StartsWith("right"))
+        {
+            command = message.Substring(0, message.Length - 4);
+            Debug.Log(command+ " " + message.Substring(message.Length - 3, 1));
+            int arg;
+            if (int.TryParse(message.Substring(message.Length - 3, 1), out arg))
+            {
+                args = new object[] { arg };
+       //         Debug.Log("got arg" + arg);
+            }
+        }
+
         foreach (CubeBehavior player in this.players)
         {
             if (player != null && player.playerNumber.ToString() == playerNumber)
             {
-                player.SendCommand(command);
+                player.SendCommand(command, args);
             }
         }
     }
