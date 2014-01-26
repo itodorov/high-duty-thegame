@@ -3,6 +3,7 @@ using System.Collections;
 using System.Text;
 using System.Collections.Generic;
 using System.Net.Sockets;
+using System;
 
 public class Networking : MonoBehaviour {
 
@@ -21,7 +22,7 @@ public class Networking : MonoBehaviour {
 	void Update () {
         if (!tcpClient.Connected)
         {
-            Debug.Log("tcp is not connected");
+            //Debug.Log("tcp is not connected");
             return;
         }
         byte[] data = new byte[tcpClient.ReceiveBufferSize];
@@ -36,6 +37,23 @@ public class Networking : MonoBehaviour {
             {
                 OnMessageReceived();
             }
+        }
+
+        string s = "";
+        foreach (CubeBehavior player in this.players)
+        {
+            if (player != null && player.scoreChanged)
+            {
+                player.scoreChanged = false;
+                s += "score " + player.playerNumber + " " + player.playerScore * 10 + "$";
+            }
+        }
+
+        if (s.Length > 0)
+        {
+            Debug.Log("Sending " + s);
+            byte[] payload = Encoding.UTF8.GetBytes(s);
+            ourStream.Write(payload, 0, payload.Length);
         }
     }
 
