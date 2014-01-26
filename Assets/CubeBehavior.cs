@@ -120,12 +120,11 @@ public class CubeBehavior : MonoBehaviour
             SphereCollider collider = sphere.collider as SphereCollider;
             float playerDistance = (opponent.transform.position - this.transform.position).magnitude;
             Debug.Log(playerDistance + " " + collider.radius * scale.x * this.transform.localScale.x);
-            if (collider.radius * scale.x * this.transform.localScale.x >= playerDistance)
+            if (collider.radius * scale.x * this.transform.localScale.x >= playerDistance && this.DecreaseScore())
             {
                 opponent.Boost();
                 baaaing = false;
                 sphere.transform.localScale = Vector3.zero;
-                this.DecreaseScore();
             }
         }
 
@@ -150,18 +149,31 @@ public class CubeBehavior : MonoBehaviour
 
     void OnTriggerEnter(Collider hit)
     {
+        if (hit.gameObject == null)
+        {
+            return;
+        }
+        if (hit.gameObject.tag == "Bush")
+        {
+            currentSpeed = Math.Min(7, currentSpeed - 7);
+        }
 
         if ((hit.gameObject.tag == "Apple" && this.playerNumber == 1) ||
             (hit.gameObject.tag == "Pear" && this.playerNumber == 2))
         {
-            if (hit.gameObject.transform.parent.gameObject != null)
+            IncreaseScore();
+            if ((DateTime.Now - boosted).TotalMilliseconds < boostDuration)
             {
-                IncreaseScore();
-                if ((DateTime.Now - boosted).TotalMilliseconds < boostDuration)
+                opponent.IncreaseScore();
+            }
+
+            foreach (Collider collider in Physics.OverlapSphere(hit.gameObject.transform.position, 0.4f))
+            {
+                if (collider.gameObject.tag == "Apple" || collider.gameObject.tag == "Pear")
                 {
-                    opponent.IncreaseScore();
+                    Debug.Log(collider.gameObject.tag);
+                    Destroy(collider.gameObject);
                 }
-                Destroy(hit.gameObject.transform.parent.gameObject);
             }
         }
 
